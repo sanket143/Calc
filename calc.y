@@ -24,7 +24,7 @@ statement_list: statement '\n'
         | statement_list statement '\n'
         ;
 
-statement: NAME '-' expression { $1->value = $3; }
+statement: NAME '=' expression { $1->value = $3; }
         | expression { printf("= %g\n", $1); }
         ;
 
@@ -51,7 +51,6 @@ expression: expression '+' expression { $$ = $1 + $3; }
             }
         }
         ;
-
 %%
 
 struct symtab* symlook(char *s){
