@@ -15,3 +15,7 @@ y.tab.c y.tab.h: calc.y
 
 lex.yy.c: calc.l
 	$(LEX) calc.l
+
+clean:
+	rm -rf ./*.o
+	rm calc.h lex.yy.c y.tab.c y.tab.h
